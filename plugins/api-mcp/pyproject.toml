@@ -1,0 +1,5 @@
+﻿[project]
+name = "api-mcp"
+version = "1.0.0"
+description = "API MCP server"
+dependencies = ["mcp>=1.0.0"]

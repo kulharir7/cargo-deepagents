@@ -1,0 +1,9 @@
+﻿[project]
+name = "database-mcp"
+version = "1.0.0"
+description = "Database MCP server - SQLite, PostgreSQL, MongoDB"
+dependencies = ["mcp>=1.0.0"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

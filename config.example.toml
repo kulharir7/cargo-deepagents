@@ -1,0 +1,119 @@
+﻿# DeepAgents Configuration Example
+# Copy this to ~/.deepagents/config.toml and customize
+
+[warnings]
+suppress = ["ripgrep"]
+
+[models]
+# Default model to use
+# Options: "glm-5:cloud", "openai:gpt-4", "anthropic:claude-3"
+default = "glm-5:cloud"
+
+# ===========================================
+# MCP Plugins Configuration
+# ===========================================
+
+[mcp]
+
+# Desktop automation - keyboard, mouse, screen
+[mcp.desktop]
+enabled = true
+description = "Desktop automation: keyboard, mouse, screen capture"
+
+# Database operations - SQLite, PostgreSQL, MongoDB
+[mcp.database]
+enabled = true
+description = "Database operations: SQLite, PostgreSQL, MongoDB"
+# dependencies = ["psycopg2-binary", "pymongo"]
+
+# Git version control
+[mcp.git]
+enabled = true
+description = "Git operations: commit, push, pull, branch, merge"
+
+# Docker container management
+[mcp.docker]
+enabled = true
+description = "Docker: containers, images, networks, volumes"
+# requires_docker = true
+
+# Cloud providers - AWS, GCP, Azure
+[mcp.cloud]
+enabled = false
+description = "Cloud operations: AWS, GCP, Azure"
+# requires_credentials = true
+
+# Browser automation
+[mcp.browser]
+enabled = true
+description = "Browser automation: navigate, click, screenshot"
+
+# REST/GraphQL API tools
+[mcp.api]
+enabled = true
+description = "API operations: GET, POST, PUT, DELETE, GraphQL"
+
+# Calendar integration
+[mcp.calendar]
+enabled = false
+description = "Calendar: Google, Outlook"
+# requires_oauth = true
+
+# Email operations
+[mcp.email]
+enabled = false
+description = "Email: send, receive, search"
+# requires_credentials = true
+
+# File operations
+[mcp.file]
+enabled = true
+description = "File operations: read, write, copy, move, find"
+
+# ===========================================
+# Agent Skills Configuration
+# ===========================================
+
+[agents]
+# Core agents
+base_agent = { skill = "base-agent", priority = 1 }
+coder_agent = { skill = "coder-agent", priority = 2 }
+debug_agent = { skill = "debug-agent", priority = 2 }
+planner_agent = { skill = "planner-agent", priority = 1 }
+main_agent = { skill = "main-agent", priority = 0 }
+
+# Specialized agents
+research_agent = { skill = "research-agent", priority = 3 }
+tester_agent = { skill = "tester-agent", priority = 3 }
+security_agent = { skill = "security-agent", priority = 3 }
+devops_agent = { skill = "devops-agent", priority = 3 }
+database_agent = { skill = "database-agent", priority = 3 }
+api_agent = { skill = "api-agent", priority = 3 }
+frontend_agent = { skill = "frontend-agent", priority = 3 }
+docs_agent = { skill = "docs-agent", priority = 3 }
+
+# ===========================================
+# Agent Routing Rules
+# ===========================================
+
+[agents.routing]
+# Default agent for unknown tasks
+default = "main-agent"
+
+# Code-related tasks
+code = ["coder-agent", "debug-agent", "tester-agent"]
+
+# Security tasks
+security = ["security-agent", "coder-agent"]
+
+# Database tasks
+database = ["database-agent", "api-agent"]
+
+# DevOps tasks
+devops = ["devops-agent", "debug-agent"]
+
+# Frontend tasks
+frontend = ["frontend-agent", "tester-agent"]
+
+# Research tasks
+research = ["research-agent", "docs-agent"]

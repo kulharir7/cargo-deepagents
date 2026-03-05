@@ -1,0 +1,5 @@
+﻿[project]
+name = "calendar-mcp"
+version = "1.0.0"
+description = "Calendar MCP server"
+dependencies = ["mcp>=1.0.0"]
