@@ -1,0 +1,5 @@
+﻿[project]
+name = "email-mcp"
+version = "1.0.0"
+description = "Email MCP server"
+dependencies = ["mcp>=1.0.0"]

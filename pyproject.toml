@@ -1,0 +1,43 @@
+﻿[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cargo-deepagents"
+version = "1.0.0"
+description = "Complete DeepAgents package with 13 agents and 10 MCP plugins"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+authors = [
+    {name = "kulharir7"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+database = ["psycopg2-binary>=2.9.0", "pymongo>=4.0.0"]
+desktop = ["pyautogui>=0.9.0", "Pillow>=10.0.0"]
+browser = ["playwright>=1.40.0"]
+dev = ["pytest>=7.4.0", "black>=23.0.0"]
+
+[project.scripts]
+deepagents = "cargo_deepagents.cli:main"
+cargo-deepagents = "cargo_deepagents.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/kulharir7/cargo-deepagents"
+Repository = "https://github.com/kulharir7/cargo-deepagents"

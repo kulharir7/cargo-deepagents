@@ -1,0 +1,8 @@
+﻿include README.md
+include LICENSE
+include config.example.toml
+include requirements.txt
+include install.py
+recursive-include cargo_deepagents *.py
+recursive-include agents *.md
+recursive-include plugins *.py *.toml

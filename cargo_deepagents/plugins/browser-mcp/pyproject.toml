@@ -1,0 +1,5 @@
+﻿[project]
+name = "browser-mcp"
+version = "1.0.0"
+description = "Browser MCP server"
+dependencies = ["mcp>=1.0.0"]
