@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "cargo-deepagents"
-version = "1.0.0"
-description = "Complete DeepAgents package with 13 agents and 10 MCP plugins"
+version = "1.1.0"
+description = "Complete DeepAgents package with 14 agents, 11 plugins, and PageIndex RAG (98.7% accuracy)"
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
@@ -32,6 +32,7 @@ dependencies = [
 database = ["psycopg2-binary>=2.9.0", "pymongo>=4.0.0"]
 desktop = ["pyautogui>=0.9.0", "Pillow>=10.0.0"]
 browser = ["playwright>=1.40.0"]
+pageindex = ["openai>=1.0.0", "pypdf>=3.0.0"]
 dev = ["pytest>=7.4.0", "black>=23.0.0"]
 
 [project.scripts]
@@ -41,3 +42,4 @@ cargo-deepagents = "cargo_deepagents.cli:main"
 [project.urls]
 Homepage = "https://github.com/kulharir7/cargo-deepagents"
 Repository = "https://github.com/kulharir7/cargo-deepagents"
+PageIndex = "https://github.com/VectifyAI/PageIndex"

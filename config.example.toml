@@ -15,6 +15,11 @@ default = "glm-5:cloud"
 
 [mcp]
 
+# PageIndex - High-accuracy RAG (98.7% accuracy)
+[mcp.pageindex]
+enabled = true
+description = "PageIndex RAG - document indexing and retrieval"
+
 # Desktop automation - keyboard, mouse, screen
 [mcp.desktop]
 enabled = true
@@ -24,7 +29,6 @@ description = "Desktop automation: keyboard, mouse, screen capture"
 [mcp.database]
 enabled = true
 description = "Database operations: SQLite, PostgreSQL, MongoDB"
-# dependencies = ["psycopg2-binary", "pymongo"]
 
 # Git version control
 [mcp.git]
@@ -35,13 +39,11 @@ description = "Git operations: commit, push, pull, branch, merge"
 [mcp.docker]
 enabled = true
 description = "Docker: containers, images, networks, volumes"
-# requires_docker = true
 
 # Cloud providers - AWS, GCP, Azure
 [mcp.cloud]
 enabled = false
 description = "Cloud operations: AWS, GCP, Azure"
-# requires_credentials = true
 
 # Browser automation
 [mcp.browser]
@@ -57,13 +59,11 @@ description = "API operations: GET, POST, PUT, DELETE, GraphQL"
 [mcp.calendar]
 enabled = false
 description = "Calendar: Google, Outlook"
-# requires_oauth = true
 
 # Email operations
 [mcp.email]
 enabled = false
 description = "Email: send, receive, search"
-# requires_credentials = true
 
 # File operations
 [mcp.file]
@@ -92,6 +92,9 @@ api_agent = { skill = "api-agent", priority = 3 }
 frontend_agent = { skill = "frontend-agent", priority = 3 }
 docs_agent = { skill = "docs-agent", priority = 3 }
 
+# Document agent with PageIndex
+document_agent = { skill = "document-agent", priority = 3 }
+
 # ===========================================
 # Agent Routing Rules
 # ===========================================
@@ -117,3 +120,6 @@ frontend = ["frontend-agent", "tester-agent"]
 
 # Research tasks
 research = ["research-agent", "docs-agent"]
+
+# Document tasks
+document = ["document-agent", "research-agent"]
